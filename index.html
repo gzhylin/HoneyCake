@@ -1,178 +1,185 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
-	<head>
-		<script src="https://d3js.org/d3.v4.js"></script>
-		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-		<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+<head>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 <style>
 div.static {
-	  position: static;
-	    border: 3px solid #73AD21;
+  position: static;
+  border: 3px solid #73AD21;
 }
 div.c {
-	  text-align: center;
+  text-align: center;
 }
 .center {
-	  width: 1000px;
-	    border: 3px solid #b08c28;
+  margin: auto;
+  width: 1000px;
+  border: 3px solid #b08c28;
+  padding: 10px;
 }
 .image1 {
-	  position: relative;
-	    top: 0;
-	      left: 0;
-	        border: 1px;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px;
 }
 .center2 {
-	  margin: auto;
-	    width: 1000px;
-	      border: 3px solid #44475a;
-	        padding: 10px;
+  margin: auto;
+  width: 1000px;
+  border: 3px solid #44475a;
+  padding: 10px;
 }
 p {text-align: center;}
 l {text-align: left;}
 r {text-align: right;}
 .dark-mode {
-	  background-color: #282a36;
-	    color: #f8f8f2;
+  background-color: #282a36;
+  color: #f8f8f2;
 }
 </style>
-	</head>
-	<body style="background-color:#f9f0ec">
-		<!-- hitwebcounter Code START -->
-		Page Views: <a href="https://www.hitwebcounter.com" target="_blank">
-			<img src="https://hitwebcounter.com/counter/counter.php?page=7552026&style=0007&nbdigits=4&type=page&initCount=0" title="Web Counter" Alt="counter free"   border="0" >
-		</a>         
-			<div id="time"></div>
-			<button onclick="myFunction()">Dark Mode</button>
-			<div class="center">
+</head>
+<body style="background-color:#f9f0ec">
+<!-- hitwebcounter Code START -->
+Page Views: <a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=7552026&style=0007&nbdigits=4&type=page&initCount=0" title="Web Counter" Alt="counter free"   border="0" >
+</a>         
+<div id="time"></div>
+<button onclick="myFunction()">Dark Mode</button>
+<div class="center">
 
-				<img class="image1" src="logo.png" />
+<img class="image1" src="logo.png" />
 
-				<p style="font-family:Helvetica;">Site under construction.
-				</p>
-			</div>
+<p style="font-family:Helvetica;">Site under construction.
+</p>
+</div>
 
-			<br>
-			<br>
-			<br>
-			<div class = "c"> 2022. </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class = "c"> 2022. </div>
 
-	<script>
+<script>
 
-		var one = 0;
+var one = 0;
 
 function startTime() {
-	  one = one + 1;
-	  document.getElementById('time').innerHTML = "Time Spent: " + one + " Seconds." ;
-	  t = setTimeout(function() {
-		      startTime()
-		    }, 1000);
+  one = one + 1;
+  document.getElementById('time').innerHTML = "Time Spent: " + one + " Seconds." ;
+  t = setTimeout(function() {
+    startTime()
+  }, 1000);
 }
 startTime();
 
 function showIt() {
-	  document.getElementById("div1").style.visibility = "visible";
+  document.getElementById("div1").style.visibility = "visible";
 }
 setTimeout("showIt()", 3000); // after 1 sec
 function showIt2() {
-	  document.getElementById("div2").style.visibility = "visible";
+  document.getElementById("div2").style.visibility = "visible";
 }
 setTimeout("showIt2()", 5000); // after 1 sec
 function showIt3() {
-	  document.getElementById("div3").style.visibility = "visible";
+  document.getElementById("div3").style.visibility = "visible";
 }
 setTimeout("showIt3()", 8000); // after 1 sec
 
 function myFunction() {
-	   var element = document.body;
-	   element.classList.toggle("dark-mode");
+   var element = document.body;
+   element.classList.toggle("dark-mode");
 }
 
 // set margins of the graph
 var margin = {top: 10, right: 100, bottom: 60, left: 100},
-	    width = 1000 - margin.left - margin.right,
-	    height = 500 - margin.top - margin.bottom;
+    width = 1000 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+    // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
       .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
         .attr("transform",
-		              "translate(" + margin.left + "," + margin.top + ")")
+              "translate(" + margin.left + "," + margin.top + ")")
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/gzhylin/Nutrition-Narrative-Visualization/master/cars.csv", function(data) {
 
-	 // X axis
-	  var x = d3.scaleLinear()
-	      .domain([0, 70000])    
-	      .range([0, width]);
-	  svg.append("g")
-	      .attr("transform", "translate(0," + height + ")")
-	      .call(d3.axisBottom(x));
+ // X axis
+  var x = d3.scaleLinear()
+      .domain([0, 70000])    
+      .range([0, width]);
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
 
-	  var histogram = d3.histogram()
-	      .value(function(d) { return d.price; })  
-	      .domain(x.domain()) 
-	      .thresholds(x.ticks(50));
+  var histogram = d3.histogram()
+      .value(function(d) { return d.price; })  
+      .domain(x.domain()) 
+      .thresholds(x.ticks(50));
 
 
-	  var bins = histogram(data);
+  var bins = histogram(data);
 
-	  // Y axis
-	  var y = d3.scaleLinear()
-	      .range([height, 0]);
-	      y.domain([0, d3.max(bins, function(d) { return d.length; })]);   
-	      svg.append("g")
-	      .call(d3.axisLeft(y));
-	  // X label price
-	  svg.append("text")
-	    .attr("class", "x label")
-	    .attr("text-anchor", "end")
-	    .attr("x", width  - 300)
-	    .attr("y", height +40)
-	    .text("Car Price (In US dollars)");
-	  // Y label Frequency 
-	  svg.append("text")
-	    .attr("class", "y label")
-	    .attr("text-anchor", "end")
-	    .attr("y", -30)
-	    .attr("x", -160)
-	    .text("Frequency");
+  // Y axis
+  var y = d3.scaleLinear()
+      .range([height, 0]);
+      y.domain([0, d3.max(bins, function(d) { return d.length; })]);   
+      svg.append("g")
+      .call(d3.axisLeft(y));
 
-	  // append the bar rectangles to the svg element
-	  svg.selectAll("rect")
-	      .data(bins)
-	      .enter()
-	      .append("rect")
-	        .attr("x", 1)
-	        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
-	        .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
-			.transition()
-			.duration(4000)
-	        .attr("height", function(d) { return height - y(d.length); })
-	        .style("fill", "#6272a4")
+  // X label price
+  svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width  - 300)
+    .attr("y", height +40)
+    .text("Car Price (In US dollars)");
+  // Y label Frequency 
+  svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -30)
+    .attr("x", -160)
+    .attr("transform", "rotate(-90)")
+    .text("Frequency");
 
-	svg.append('line')
-	  .attr('x1', 150)
-	  .attr('y1', 200)
-	  .attr('x2', 600)
-	  .attr('y2', 30)
-	  .attr('stroke', 'red')
-	svg.append("text").attr("x", 630).attr("y", 30).text("Average Car Price").style("font-size", "17px")
+  // append the bar rectangles to the svg element
+  svg.selectAll("rect")
+      .data(bins)
+      .enter()
+      .append("rect")
+        .attr("x", 1)
+        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
+        .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
+		.transition()
+		.duration(4000)
+        .attr("height", function(d) { return height - y(d.length); })
+        .style("fill", "#6272a4")
+
+svg.append('line')
+  .attr('x1', 150)
+  .attr('y1', 200)
+  .attr('x2', 600)
+  .attr('y2', 30)
+  .attr('stroke', 'red')
+svg.append("text").attr("x", 630).attr("y", 30).text("Average Car Price").style("font-size", "17px")
 
 
 
 
 });
-	</script>
+</script>
 
-	<script>
+<script>
 
-		var margin2 = {top: 30, right: 100, bottom: 60, left: 100},
-	    width2 = 1000 - margin2.left - margin2.right,
-	    height2 = 500 - margin2.top - margin2.bottom;
+var margin2 = {top: 30, right: 100, bottom: 60, left: 100},
+    width2 = 1000 - margin2.left - margin2.right,
+    height2 = 500 - margin2.top - margin2.bottom;
     // append the svg object to the body of the page
     var svg2 = d3.select("#my_dataviz2")
       .append("svg")
@@ -180,193 +187,194 @@ d3.csv("https://raw.githubusercontent.com/gzhylin/Nutrition-Narrative-Visualizat
         .attr("height", height2 + margin2.top + margin2.bottom)
       .append("g")
         .attr("transform",
-		              "translate(" + margin2.left + "," + margin2.top + ")")
+              "translate(" + margin2.left + "," + margin2.top + ")")
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/gzhylin/Nutrition-Narrative-Visualization/master/cars.csv", function(data) {
 
-	  var x2 = d3.scaleLinear()
-	    .domain([0, 0])
-	    .range([ 0, width2 ]);
-	  svg2.append("g")
-	    .attr("class", "myXaxis")   // Note that here we give a class to the X axis, to be able to call it later and modify it
-	    .attr("transform", "translate(0," + height2 + ")")
-	    .call(d3.axisBottom(x2))
-	    .attr("opacity", "0")
+  var x2 = d3.scaleLinear()
+    .domain([0, 0])
+    .range([ 0, width2 ]);
+  svg2.append("g")
+    .attr("class", "myXaxis")   // Note that here we give a class to the X axis, to be able to call it later and modify it
+    .attr("transform", "translate(0," + height2 + ")")
+    .call(d3.axisBottom(x2))
+    .attr("opacity", "0")
 
-	  var y2 = d3.scaleLinear()
-	    .domain([0, 200000])
-	    .range([ height2, 0]);
-	  svg2.append("g")
-	    .call(d3.axisLeft(y2));
+  var y2 = d3.scaleLinear()
+    .domain([0, 200000])
+    .range([ height2, 0]);
+  svg2.append("g")
+    .call(d3.axisLeft(y2));
 
-	  svg2.append("text")
-	    .attr("class", "x label")
-	    .attr("text-anchor", "end")
-	    .attr("x", width  - 330)
-	    .attr("y", height + 20)
-	    .text("Car Price (In US dollars)");
+  svg2.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width  - 330)
+    .attr("y", height + 20)
+    .text("Car Price (In US dollars)");
 
-	  svg2.append("text")
-	    .attr("class", "y label")
-	    .attr("text-anchor", "end")
-	    .attr("y", -50)
-	    .attr("x", -130)
-	    .attr("transform", "rotate(-90)")
-	    .text("Car MIleage");
+  svg2.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -50)
+    .attr("x", -130)
+    .attr("transform", "rotate(-90)")
+    .text("Car MIleage");
 
-	  // Add dots
-	  svg2.append('g')
-	    .selectAll("dot")
-	    .data(data)
-	    .enter()
-	    .append("circle")
-	      .attr("cx", function (d) { return x2(d.price); } )
-	      .attr("cy", function (d) { return y2(d.mileage); } )
-	      .attr("r", 1.5)
-	      .style("fill", "#6272a4")
+  // Add dots
+  svg2.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x2(d.price); } )
+      .attr("cy", function (d) { return y2(d.mileage); } )
+      .attr("r", 1.5)
+      .style("fill", "#6272a4")
 
-	  // new X axis
-	  x2.domain([0, 80000])
-	  svg2.select(".myXaxis")
-	    .transition()
-	    .duration(2000)
-	    .attr("opacity", "1")
-	    .call(d3.axisBottom(x2));
-	  svg2.selectAll("circle")
-	    .transition()
-	    .duration(2000)
-	    .attr("cx", function (d) { return x2(d.price); } )
-	    .attr("cy", function (d) { return y2(d.mileage); } )
-		.attr("size", "29")
-	    .attr("r", 4)
+  // new X axis
+  x2.domain([0, 80000])
+  svg2.select(".myXaxis")
+    .transition()
+    .duration(2000)
+    .attr("opacity", "1")
+    .call(d3.axisBottom(x2));
 
-	svg2.append('line')
-	  .attr('x1', 170)
-	  .attr('y1', 350)
-	  .attr('x2', 600)
-	  .attr('y2', 30)
-	  .attr('stroke', 'red')
-	svg2.append("text").attr("x", 630).attr("y", 30).text("Average Mileage & Price").style("font-size", "17px")
+  svg2.selectAll("circle")
+    .transition()
+    .delay(function(d,i){return(i*3)})
+    .duration(2000)
+    .attr("cx", function (d) { return x2(d.price); } )
+    .attr("cy", function (d) { return y2(d.mileage); } )
+	.attr("size", "29")
+    .attr("r", 4)
+
+svg2.append('line')
+  .attr('x1', 170)
+  .attr('y1', 350)
+  .attr('x2', 600)
+  .attr('y2', 30)
+  .attr('stroke', 'red')
+svg2.append("text").attr("x", 630).attr("y", 30).text("Average Mileage & Price").style("font-size", "17px")
 
 
 })
 
-	</script>
+</script>
 
-	<script>
-		var margin3 = {top: 10, right: 100, bottom: 60, left: 100},
-	    width3 = 1000 - margin3.left - margin3.right,
-	    height3 = 500 - margin3.top - margin3.bottom;
+<script>
+
+var margin3 = {top: 10, right: 100, bottom: 60, left: 100},
+    width3 = 1000 - margin3.left - margin3.right,
+    height3 = 500 - margin3.top - margin3.bottom;
 
 var svg3 = d3.select("#my_dataviz3")
   .append("svg")
     .attr("width", width3 + margin3.left + margin3.right)
     .attr("height", height3 + margin3.top + margin3.bottom)
     .call(d3.zoom().on("zoom", function () {
-	           svg3.attr("transform", d3.event.transform)
-	        }))
+       svg3.attr("transform", d3.event.transform)
+    }))
   .append("g")
     .attr("transform",
-	              "translate(" + margin3.left + "," + margin3.top + ")");
+          "translate(" + margin3.left + "," + margin3.top + ")");
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/gzhylin/Nutrition-Narrative-Visualization/master/cars.csv", function(data) {
 
-	  // Add X axis
-	  var x3 = d3.scaleLinear()
-	    .domain([0, 70000])
-	    .range([ 0, width3 ]);
-	  svg3.append("g")
-	    .attr("transform", "translate(0," + height3 + ")")
-	    .call(d3.axisBottom(x3).ticks(10));
+  // Add X axis
+  var x3 = d3.scaleLinear()
+    .domain([0, 70000])
+    .range([ 0, width3 ]);
+  svg3.append("g")
+    .attr("transform", "translate(0," + height3 + ")")
+    .call(d3.axisBottom(x3).ticks(10));
 
-	  // X label price
-	  svg3.append("text")
-	    .attr("class", "x label")
-	    .attr("text-anchor", "end")
-	    .attr("x", width  - 330)
-	    .attr("y", height + 40)
-	    .text("Car Price (In US dollars)");
+  // X label price
+  svg3.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width  - 330)
+    .attr("y", height + 40)
+    .text("Car Price (In US dollars)");
 
-	  // Y label Frequency 
-	  svg3.append("text")
-	    .attr("class", "y label")
-	    .attr("text-anchor", "end")
-	    .attr("y", -50)
-	    .attr("x", -130)
-	    .attr("transform", "rotate(-90)")
-	    .text("Car Year");
+  // Y label Frequency 
+  svg3.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -50)
+    .attr("x", -130)
+    .attr("transform", "rotate(-90)")
+    .text("Car Year");
 
-	  // Add Y axis
-	  var y3 = d3.scaleLinear()
-	    .domain([2000, 2020])
-	    .range([ height3, 0]);
-	  svg3.append("g")
-	    .call(d3.axisLeft(y3))
-	   .call(d3.axisLeft(y3).ticks(20));
+  // Add Y axis
+  var y3 = d3.scaleLinear()
+    .domain([2000, 2020])
+    .range([ height3, 0]);
+  svg3.append("g")
+    .call(d3.axisLeft(y3))
+   .call(d3.axisLeft(y3).ticks(20));
 
-	  // Add a scale for bubble color
-	  var myColor = d3.scaleOrdinal()
-	    .range(d3.schemeSet1);
+  // Add a scale for bubble color
+  var myColor = d3.scaleOrdinal()
+    .range(d3.schemeSet1);
 
-		svg3.append("circle").attr("cx",600).attr("cy",330).attr("r", 6).style("fill", "#404080")
-		svg3.append("text").attr("x", 630).attr("y", 330).text("Bubble Color Represents Car Color").style("font-size", "17px").attr("alignment-baseline","middle")
-		svg3.append("text").attr("x", 640).attr("y", 360).text("Please zoom with mouse wheel.").style("font-size", "15px").attr("alignment-baseline","middle")
+	svg3.append("circle").attr("cx",600).attr("cy",330).attr("r", 6).style("fill", "#404080")
+	svg3.append("text").attr("x", 630).attr("y", 330).text("Bubble Color Represents Car Color").style("font-size", "17px").attr("alignment-baseline","middle")
+	svg3.append("text").attr("x", 640).attr("y", 360).text("Please zoom with mouse wheel.").style("font-size", "15px").attr("alignment-baseline","middle")
 
-	  var tooltip = d3.select("#my_dataviz3")
-	    .append("div")
-	      .style("opacity", 0)
-	      .attr("class", "tooltip")
-	      .style("background-color", "black")
-	      .style("border-radius", "5px")
-	      .style("padding", "10px")
-	      .style("color", "white")
+  var tooltip = d3.select("#my_dataviz3")
+    .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+      .style("background-color", "black")
+      .style("border-radius", "5px")
+      .style("padding", "10px")
+      .style("color", "white")
 
-	      .transition()
-	      .duration(200)
-	    tooltip
-	      .style("opacity", 1)
-	      .html("Car Information: Brand: " + d.brand
-		      		  + ", Model: " + d.model 
-		      		  + ", Year: " + d.year 
-		      		  + ", Title: " + d.title_status 
-		      		  + ", Mileage: " + d.mileage 
-		      		  + ", Color: " + d.color 
-		      		  + ", State: " + d.state )
-	      .style("left", "100px")
-	      .style("top", "100px")
-	  }
+  var showTooltip = function(d) {
+    tooltip
+      .transition()
+      .duration(200)
+    tooltip
+      .style("opacity", 1)
+      .html("Car Information: Brand: " + d.brand
+		  + ", Model: " + d.model 
+		  + ", Year: " + d.year 
+		  + ", Title: " + d.title_status 
+		  + ", Mileage: " + d.mileage 
+		  + ", Color: " + d.color 
+		  + ", State: " + d.state )
+      .style("left", "100px")
+      .style("top", "100px")
+  }
 
-	  var hideTooltip = function(d) {
-		      tooltip
-		        .transition()
-		        .duration(200)
-		        .style("opacity", 0)
-		    }
+  var hideTooltip = function(d) {
+    tooltip
+      .transition()
+      .duration(200)
+      .style("opacity", 0)
+  }
 
-	  // Add dots
-	  svg3.append('g')
-	    .selectAll("dot")
-	    .data(data)
-	    .enter()
-	    .append("circle")
-	      .attr("class", function(d) { return "bubbles " + d.mileage })
-	      .attr("cx", function (d) { return x3(d.price); } )
-	      .attr("cy", function (d) { return y3(d.year); } )
-	      .attr("r", 5)
-	      .style("fill", function (d) { return myColor(d.color); } )
+  // Add dots
+  svg3.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("class", function(d) { return "bubbles " + d.mileage })
+      .attr("cx", function (d) { return x3(d.price); } )
+      .attr("cy", function (d) { return y3(d.year); } )
+      .attr("r", 5)
+      .style("fill", function (d) { return myColor(d.color); } )
 
-	    .on("mouseover", showTooltip )
+    .on("mouseover", showTooltip )
 
-	    .on("mouseleave", hideTooltip )
+    .on("mouseleave", hideTooltip )
 
-	  })
-	</script>
-
-
-
-
+  })
+</script>
 
 
 
@@ -408,5 +416,9 @@ d3.csv("https://raw.githubusercontent.com/gzhylin/Nutrition-Narrative-Visualizat
 
 
 
-	</body>
+
+
+
+
+</body>
 </html>
