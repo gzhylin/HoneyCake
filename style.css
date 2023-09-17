@@ -9,11 +9,15 @@ div.c {
   color: #222;
 }
 .center {
+  position: relative;
   margin: auto;
-  width: 1000px;
-  padding: 10px;
+  width: auto;
   font-family: Georgia, serif;
-
+}
+.center img {
+    margin: auto;
+    display: block;
+width: auto;
 }
 .order_page {
   margin: auto;
@@ -51,8 +55,9 @@ div.c {
 }
 
 .menu {
+  position: relative;
   margin: auto;
-  width: 1000px;
+  width: auto;
   padding: 10px;
   background-color: #690a09;
   border-radius: 15px;
