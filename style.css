@@ -1,0 +1,271 @@
+div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}
+div.c {
+  text-align: center;
+  font-family: Calibri, serif;
+  font-size: 34px;
+  color: #222;
+}
+.center {
+  margin: auto;
+  width: 1000px;
+  padding: 10px;
+  font-family: Georgia, serif;
+
+}
+.order_page {
+  margin: auto;
+  width: 1000px;
+  padding: 10px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 15px;
+  background-color: white;
+}
+.about_page {
+  margin: auto;
+  width: 800px;
+  height: 1500px;
+  padding: 10px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.about_page_pic {
+  margin-top: 88px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 800px;
+  
+  font-family: Georgia, serif;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.menu {
+  margin: auto;
+  width: 1000px;
+  padding: 10px;
+  background-color: #690a09;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+img.about {
+  width: 600px;
+  height: 800px;
+  border-radius: 15px;
+}
+.center2 {
+  margin: auto;
+  width: 1000px;
+  border: 3px solid #44475a;
+  padding: 10px;
+}
+p {text-align: center;}
+l {text-align: left;}
+r {text-align: right;}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  width: 1000px;
+  /* border: 3px solid #b08c28; */
+
+  /*  https://getcssscan.com/css-box-shadow-examples */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+
+/* instagram */
+
+.fa {
+  padding: 20px;
+  font-size: 40px;
+  width: 55px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 15px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.order_button {
+  padding: 16px;
+  background-color: #690a09;
+  border: none;
+  color: white;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 20px;
+  width: 200px;
+  height: 56px;
+}
+
+/* drop down navigation */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 65px;
+  font-family: Georgia, serif;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 100px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
