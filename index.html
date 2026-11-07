@@ -1,47 +1,391 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- Add icon library -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Honey Cake Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Honey Cake Bakery | Ukrainian homemade cakes in Austin, TX</title>
+  <meta name="description" content="Traditional Ukrainian honey cake, custom celebration cakes and pastries, baked from scratch to order by Oksana in the Austin, Texas area. Text to order.">
+  <meta name="theme-color" content="#6b0000">
+  <link rel="canonical" href="https://honeycakebakeryaustin.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Honey Cake Bakery">
+  <meta property="og:description" content="Ukrainian homemade honey cake, custom cakes and pastries in the Austin, Texas area.">
+  <meta property="og:url" content="https://honeycakebakeryaustin.com/">
+  <meta property="og:image" content="https://honeycakebakeryaustin.com/images/logo-mark.png">
+
+  <link rel="icon" type="image/png" href="images/logo-mark.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&amp;family=Manrope:wght@400..700&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="scripts.js" defer></script>
 </head>
-<body style="background-color:#f9f0ec">
+<body>
 
-<!-- Slide Right Navigation bar -->
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="index.html" >Home</a>
-    <a href="gallery.html">Pastry Gallery</a>
-    <a href="order.html">How To Order</a>
-    <a href="about.html">About</a>
-  </div>
-</div>
-<div class="menu" style="text-align: center;">
-	<span style="font-size:50px;cursor:pointer;color:white;font-family: Calibri, sans-serif;" onclick="openNav()">&#9776; Menu </span>
-</div>
-<!-- Main Logo -->
-<div class="center">
-	<img class="image1" src="logo2.png" align="middle"/>
-		<a href="#" class="fa fa-instagram"></a>
-		<a href="order.html" class="order_button" >Order Now</a>
-</div>
+  <!-- Icon set, referenced below with <use href="#i-name"> -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-honey" viewBox="0 0 24 24"><path d="M12 2.8 19.5 7v8.6L12 19.8l-7.5-4.2V7z"/><path d="M12 9c1.7 2.1 2.5 3.6 2.5 4.6a2.5 2.5 0 0 1-5 0c0-1 .8-2.5 2.5-4.6z"/></symbol>
+    <symbol id="i-cake" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21v-6.5A2.5 2.5 0 0 1 7.5 12h9a2.5 2.5 0 0 1 2.5 2.5V21"/><path d="M5 16.5c1.2.9 2.3.9 3.5 0s2.3-.9 3.5 0 2.3.9 3.5 0 2.3-.9 3.5 0"/><path d="M12 12V8.5"/><path d="M12 6.5c.9-.6 1.1-1.6 0-2.8-1.1 1.2-.9 2.2 0 2.8z"/></symbol>
+    <symbol id="i-cupcake" viewBox="0 0 24 24"><path d="M6.5 13h11l-1.6 7.2a1 1 0 0 1-1 .8H9.1a1 1 0 0 1-1-.8z"/><path d="M5 13a3 3 0 0 1 1.2-5.6A5.5 5.5 0 0 1 17 6.5a3.2 3.2 0 0 1 2 6.5"/><path d="m10 13 .6 8M14 13l-.6 8"/></symbol>
+    <symbol id="i-rings" viewBox="0 0 24 24"><circle cx="9" cy="14.5" r="5.5"/><circle cx="15" cy="14.5" r="5.5"/><path d="m10.5 5 1.5-2 1.5 2-1.5 1.8z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.5 10.5 5 19 5c0 8.5-5.5 14-14 14z"/><path d="m5 19 8-8"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 10h4.2l3.3 3.4v3.1h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M15.5 15h2"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.6 4.6 12 6l2.4-1.4M9.6 19.4 12 18l2.4 1.4"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.3 7.6l-4.7 1.4 1.4-4.4a8.5 8.5 0 1 1 15.6-4.6z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7v.1"/></symbol>
+  </svg>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- hitwebcounter Code START -->
-Page Views: <a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=7552026&style=0007&nbdigits=4&type=page&initCount=0" title="Web Counter" Alt="counter free"   border="0" >
-</a>  
+  <a class="skip-link" href="#main">Skip to content</a>
 
-	<script src="scripts.js"></script>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Honey Cake Bakery, back to top">
+        <img src="images/logo-mark.png" alt="" width="444" height="595">
+        <span class="brand-text">Honey Cake<small>Bakery</small></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li class="nav-order-link"><a href="#order">Order</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="#order">Order</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Homemade bakery &middot; Austin, Texas</p>
+          <h1>Ukrainian honey cake, <em>made by hand</em></h1>
+          <p class="hero-lede">Traditional honey cake, custom celebration cakes and pastries, baked from scratch to order by Oksana.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#order">Order a cake <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="#gallery">View gallery</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-plate">
+            <img src="images/logo-mark.png" alt="Honey Cake Bakery logo: Ukrainian homemade honey cake bakery" width="444" height="595">
+          </div>
+          <p class="hero-badge"><span class="flag" aria-hidden="true"></span>Traditional Ukrainian recipes</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="eyebrow">About</p>
+          <h2>Ukrainian recipes, baked in Texas</h2>
+          <p class="about-lead">Honey Cake is a small home bakery run by Oksana in the Austin area.</p>
+          <p>She bakes traditional Ukrainian cakes and pastries, starting with the one the bakery is named after: a tender, many-layered honey cake. Every order is baked from scratch in small batches, for birthdays, holidays, weddings and everyday treats.</p>
+        </div>
+
+        <ul class="about-points">
+          <li class="reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <div>
+              <h3>Baked fresh</h3>
+              <p>Prepared within 24 hours before your pickup.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></span>
+            <div>
+              <h3>No preservatives</h3>
+              <p>Made with high-quality ingredients and nothing added to extend shelf life.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <div>
+              <h3>Made to order</h3>
+              <p>Every cake is baked for your order and your occasion.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-tint" id="services">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Services</p>
+          <h2>What Oksana bakes</h2>
+          <p class="section-lede">Everything is baked to order. Have something else in mind? Send a text and ask.</p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-honey"/></svg></span>
+            <h3>Signature honey cake</h3>
+            <p>The classic Ukrainian honey cake, with thin honey-sweet layers and soft cream.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-cake"/></svg></span>
+            <h3>Celebration cakes</h3>
+            <p>Custom cakes for birthdays, anniversaries and other milestones, decorated to match your celebration.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-cupcake"/></svg></span>
+            <h3>Pastries &amp; baked goods</h3>
+            <p>Homemade pastries and treats for family gatherings, holidays and parties.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-rings"/></svg></span>
+            <h3>Weddings &amp; events</h3>
+            <p>Custom cakes, baked goods and edible decorations for weddings and large celebrations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Gallery</p>
+          <h2>Fresh from the kitchen</h2>
+          <p class="section-lede">A look at recent cakes and pastries.</p>
+        </header>
+
+        <!--
+          Photos come from originals/instagram (local only). Prepare new ones with:
+          swift tools/prepare-gallery-photos.swift images/gallery originals/instagram/FILE.jpg=slug
+          then copy a <figure> below and point it at the new slug.
+        -->
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-item--feature reveal">
+            <a class="gallery-link" href="images/gallery/valentines-honey-cake-lg.jpg">
+              <img src="images/gallery/valentines-honey-cake-sm.jpg"
+                   srcset="images/gallery/valentines-honey-cake-xs.jpg 480w, images/gallery/valentines-honey-cake-sm.jpg 800w, images/gallery/valentines-honey-cake-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 580px, 100vw" width="800" height="1067"
+                   alt="Heart-shaped layered honey cake topped with fresh strawberries and pink cream roses" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Valentine's honey cake</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/honey-cake-lg.jpg">
+              <img src="images/gallery/honey-cake-sm.jpg"
+                   srcset="images/gallery/honey-cake-xs.jpg 480w, images/gallery/honey-cake-sm.jpg 800w, images/gallery/honey-cake-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="655"
+                   alt="Honey cake decorated with a yellow honeycomb pattern" style="object-position: 35% 50%" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Signature honey cake</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/wedding-cake-lg.jpg">
+              <img src="images/gallery/wedding-cake-sm.jpg"
+                   srcset="images/gallery/wedding-cake-xs.jpg 480w, images/gallery/wedding-cake-sm.jpg 800w, images/gallery/wedding-cake-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="1067"
+                   alt="Ivory wedding cake with white sugar flowers" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Wedding cake</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/pistachio-eclairs-lg.jpg">
+              <img src="images/gallery/pistachio-eclairs-sm.jpg"
+                   srcset="images/gallery/pistachio-eclairs-xs.jpg 480w, images/gallery/pistachio-eclairs-sm.jpg 800w, images/gallery/pistachio-eclairs-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="977"
+                   alt="Box of eclairs with green pistachio glaze and chopped pistachios" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Pistachio eclairs</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/lambeth-cake-lg.jpg">
+              <img src="images/gallery/lambeth-cake-sm.jpg"
+                   srcset="images/gallery/lambeth-cake-xs.jpg 480w, images/gallery/lambeth-cake-sm.jpg 800w, images/gallery/lambeth-cake-lg.jpg 1024w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="800"
+                   alt="Pink cake with vintage Lambeth-style piping and bows" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Lambeth cake</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/orange-mousse-lg.jpg">
+              <img src="images/gallery/orange-mousse-sm.jpg"
+                   srcset="images/gallery/orange-mousse-xs.jpg 480w, images/gallery/orange-mousse-sm.jpg 800w, images/gallery/orange-mousse-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="800"
+                   alt="Mousse dessert shaped like a mandarin, cut open beside fresh mandarins" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Orange mousse dessert</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/honey-cake-slice-lg.jpg">
+              <img src="images/gallery/honey-cake-slice-sm.jpg"
+                   srcset="images/gallery/honey-cake-slice-xs.jpg 480w, images/gallery/honey-cake-slice-sm.jpg 800w, images/gallery/honey-cake-slice-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="1000"
+                   alt="Slice of many-layered honey cake on a white plate" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Honey cake slice</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/raspberry-eclairs-lg.jpg">
+              <img src="images/gallery/raspberry-eclairs-sm.jpg"
+                   srcset="images/gallery/raspberry-eclairs-xs.jpg 480w, images/gallery/raspberry-eclairs-sm.jpg 800w, images/gallery/raspberry-eclairs-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="869"
+                   alt="Box of eclairs with pink raspberry glaze and dried raspberries" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Raspberry eclairs</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <a class="gallery-link" href="images/gallery/easter-bread-lg.jpg">
+              <img src="images/gallery/easter-bread-sm.jpg"
+                   srcset="images/gallery/easter-bread-xs.jpg 480w, images/gallery/easter-bread-sm.jpg 800w, images/gallery/easter-bread-lg.jpg 1440w"
+                   sizes="(min-width: 861px) 280px, 50vw" width="800" height="943"
+                   alt="Easter bread with an almond crust and candied orange" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Easter bread</figcaption>
+          </figure>
+        </div>
+
+        <p class="gallery-more reveal">
+          <a class="btn btn-ghost" href="https://www.instagram.com/honey_cake_bakery_austin/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+            See more on Instagram
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Order -->
+    <section class="section section-order" id="order">
+      <div class="container order-grid">
+        <div class="order-card reveal">
+          <p class="pill"><span class="pill-dot" aria-hidden="true"></span>Online ordering coming soon</p>
+          <h2>To order, send a text</h2>
+          <p class="order-lede">Online ordering is coming soon. For now, please text Oksana with your order.</p>
+          <a class="btn btn-honey btn-lg" href="sms:+18157560906">
+            <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
+            Text (815) 756-0906
+          </a>
+
+          <div class="order-include">
+            <h3>Please include</h3>
+            <ul class="checklist">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>What you'd like and how many people it should serve</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Your pickup or delivery date</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Design ideas or inspiration photos, if you have them</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="order-details">
+          <h3 class="order-details-title reveal">Good to know</h3>
+          <ul class="details-list">
+            <li class="reveal">
+              <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <div>
+                <h4>Pickup</h4>
+                <p>Leander, TX, about 30 minutes from downtown Austin. Pickup times are flexible.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span>
+              <div>
+                <h4>Delivery</h4>
+                <p>Delivery is available for certain orders. Please ask when ordering.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+              <div>
+                <h4>Payment</h4>
+                <p>Cash, Zelle or Venmo. Checks are not accepted.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></span>
+              <div>
+                <h4>Freshness</h4>
+                <p>Baked within 24 hours before pickup, with no preservatives. Refrigerate within 30 minutes of pickup and enjoy within 72 hours.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></span>
+              <div>
+                <h4>Dietary needs</h4>
+                <p>Sugar-free and gluten-free options are not available at the moment.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Full-screen photo viewer for the gallery (scripts.js) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <figure class="lightbox-figure">
+      <img class="lightbox-img" src="data:," alt="">
+      <figcaption class="lightbox-caption">
+        <span class="lightbox-title"></span>
+        <span class="lightbox-count"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-btn lightbox-close" type="button" aria-label="Close photo viewer"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous photo"><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    <button class="lightbox-btn lightbox-next" type="button" aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo"><img src="images/logo-mark.png" alt="" width="444" height="595" loading="lazy"></span>
+        <p><strong>Honey Cake Bakery</strong>Ukrainian homemade cakes and pastries in the Austin, Texas area.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#order">Order</a>
+      </nav>
+
+      <div class="footer-contact">
+        <a class="footer-phone" href="sms:+18157560906">
+          <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
+          Text (815) 756-0906
+        </a>
+        <a class="footer-social" href="https://www.instagram.com/honey_cake_bakery_austin/" target="_blank" rel="noopener" aria-label="Honey Cake Bakery on Instagram">
+          <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Honey Cake Bakery</p>
+    </div>
+  </footer>
+
 </body>
 </html>

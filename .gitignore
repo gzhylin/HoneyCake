@@ -1,0 +1,8 @@
+# Local-only Kiro steering files
+.kiro/steering/*.local.md
+
+# Local helper scripts (not part of the website)
+/tools/
+
+# Original photos downloaded from Instagram (local only, never pushed)
+/originals/
