@@ -1,5 +1,5 @@
-# Local-only Kiro steering files
-.kiro/steering/*.local.md
+# Kiro config (steering rules, hooks). Local only for now.
+/.kiro/
 
 # Local helper scripts (not part of the website)
 /tools/
